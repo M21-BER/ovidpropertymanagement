@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaExclamation } from "react-icons/fa";
 
 export default function Error() {
   const router = useRouter();
