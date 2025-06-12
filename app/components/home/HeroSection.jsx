@@ -2,7 +2,13 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { useEffect, useState } from "react";
-
+import Image from "next/image";
+import slider2 from "@/public/images/slider/slider2.jpg";
+import slider3 from "@/public/images/slider/slider3.jpg";
+import slider4 from "@/public/images/slider/slider4.jpg";
+import slider5 from "@/public/images/slider/slider5.jpg";
+import slider6 from "@/public/images/slider/slider6.jpg";
+import slider7 from "@/public/images/slider/slider7.jpg";
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -28,27 +34,19 @@ export default function HeroSection() {
         ref={sliderRef}
         className="keen-slider absolute inset-0 z-0 w-full h-full"
       >
-        <div className="keen-slider__slide">
-          <img
-            src="/images/slider1.jpg"
-            alt="Slide 1"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="keen-slider__slide">
-          <img
-            src="/images/slider2.jpg"
-            alt="Slide 2"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="keen-slider__slide">
-          <img
-            src="/images/slider3.jpg"
-            alt="Slide 3"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        {[slider7, slider6, slider5, slider4, slider3, slider2].map(
+          (img, index) => (
+            <div key={index + 1} className="keen-slider__slide relative">
+              <Image
+                src={img}
+                alt={`Slider ${index + 1}`}
+                fill
+                className="object-cover"
+                placeholder="blur"
+              />
+            </div>
+          )
+        )}
       </div>
 
       {/* BACKDROP */}
@@ -57,15 +55,25 @@ export default function HeroSection() {
       {/* Hero Text Content */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white text-center px-4">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-          Property Management <br className="hidden md:block" /> & Title Deed
-          Services
+          PROPERTY MANAGEMENT <br className="hidden md:block" /> & TITLE DEED
         </h1>
         <p className="text-sm sm:text-base md:text-lg max-w-2xl mb-6 leading-relaxed">
           From HOA oversight to rental and commercial property services, OVID
           ensures expert management, smooth transactions, and legally compliant
           title deeds—so your investments thrive with peace of mind.
         </p>
-        <button className="bg-[#133289] px-6 py-2 sm:px-8 sm:py-3 rounded text-white font-semibold hover:opacity-80 transition-all">
+        {/* <button className="bg-gradient-to-r from-[#cd99cd] via-[#9c6db0] to-[#6e49a3] cursor-pointer px-6 py-2 sm:px-8 sm:py-3 rounded text-white font-semibold hover:bg-[#6e49a3] transition-all">
+          Partner with OVID Today
+        </button> */}
+
+        <button
+          className="bg-gradient-to-r from-[#cd99cd] via-[#9c6db0] to-[#6e49a3]
+    hover:from-[#6e49a3] hover:via-[#9c6db0] hover:to-[#cd99cd]
+    text-white text-[clamp(0.875rem,2.5vw,1rem)]
+    px-[clamp(1rem,4vw,2rem)] py-[clamp(0.5rem,1.5vw,1rem)]
+    rounded font-semibold opacity-100 hover:opacity-80
+    transition-all duration-300"
+        >
           Partner with OVID Today
         </button>
       </div>

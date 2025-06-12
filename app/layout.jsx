@@ -3,6 +3,8 @@ import "./globals.css";
 import "keen-slider/keen-slider.min.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Head from "./components/Head";
+import FaviconSwitcher from "./components/FaviconSwitcher";
 const cormorant_garamond = Cormorant_Garamond({
   variable: "--font-cormorant_garamond",
   subsets: ["latin"],
@@ -23,33 +25,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon/favicon.ico" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <meta name="theme-color" content="#ffffff" />
-      </head>
+      <Head />
       <body
-        className={`${cormorant_garamond.variable} ${jost.variable} antialiased`}
+        className={`flex min-h-screen flex-col ${cormorant_garamond.variable} ${jost.variable} antialiased`}
       >
+        <FaviconSwitcher />
         <Navbar />
-        {children}
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

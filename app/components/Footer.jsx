@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   FaInstagram,
   FaTiktok,
@@ -10,7 +11,7 @@ import { IoMail } from "react-icons/io5";
 export default function Footer() {
   return (
     <footer className="border-t-2 border-[rgba(255,255,255,0.1)] bg-[#0F0F16]  text-[#cd99cd] py-10 px-6 text-sm">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Signup */}
         <div>
           <h3 className="font-bold mb-2">Don't Miss Out</h3>
@@ -27,10 +28,21 @@ export default function Footer() {
             />
             <button
               type="submit"
-              className="bg-[#cd99cd] text-black px-4 py-2 font-bold"
+              className="bgg rounded cursor-pointer text-[#fff] px-4 py-2 font-bold"
             >
-              SIGN UP
+              Sign Up
             </button>
+
+            {/* <button
+              className="bg-gradient-to-r from-[#cd99cd] via-[#9c6db0] to-[#6e49a3]
+    hover:from-[#6e49a3] hover:via-[#9c6db0] hover:to-[#cd99cd]
+    text-white text-[clamp(0.875rem,2.5vw,1rem)]
+    px-[clamp(1rem,4vw,2rem)] py-[clamp(0.5rem,1.5vw,1rem)]
+    rounded font-semibold opacity-80 hover:opacity-100
+    transition-all duration-300"
+            >
+              Sign Up
+            </button> */}
           </form>
           <p className="text-gray-400 text-xs mt-2">
             This site is intended for users in Ethiopia. By signing up, you
@@ -43,20 +55,26 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-2">Company</h3>
           <ul className="space-y-1 text-gray-400">
-            <li>About</li>
-            <li>Experts and Spokesmodels</li>
+            <li>
+              <Link href="/about">
+                About OVID Property Management & Title Deed{" "}
+              </Link>
+            </li>
+            <li>
+              <Link href="/address">Contact Information</Link>
+            </li>
           </ul>
         </div>
 
         {/* Customer Service */}
-        <div>
+        {/* <div>
           <h3 className="font-bold mb-2">Customer Service</h3>
           <ul className="space-y-1 text-gray-400">
             <li>Contact Us</li>
             <li>Services</li>
             <li></li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Contact Info & Socials */}
         <div>
@@ -68,7 +86,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <IoMail className="text-[#cd99cd]" />
-              PM@ovid-group.com
+              info@ovidpropertymanagement.com
             </li>
 
             <li className="flex items-start gap-2">
@@ -113,7 +131,7 @@ export default function Footer() {
         <p>SITE MAP | PRIVACY POLICY | TERMS OF SERVICE</p>
         <p className="mt-2">
           &copy; {new Date().getFullYear()} OVID Property Management & Title
-          Deed Services
+          Deed
         </p>
       </div>
     </footer>

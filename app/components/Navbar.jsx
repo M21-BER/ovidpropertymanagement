@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-10 py-2 flex justify-between items-center">
         <Link href="/">
           <Image
-            src="/images/logo.png"
+            src="/images/logo_light.png"
             width={120}
             height={80}
             alt="logo ovid property management"
@@ -37,8 +37,8 @@ export default function Navbar() {
           />
         </Link>
         {/* Desktop Navigation */}
-        <nav className="font-cormorant_garamond font-bold hidden md:flex space-x-6 text-[12px] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
-          {["HOME", "ABOUT", "SERVICES", "CONTACT"].map((text) => (
+        <nav className="font-jost font-light hidden md:flex space-x-6 text-[12px] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+          {["HOME", "ABOUT", "SERVICES", "ADDRESS"].map((text) => (
             <Link
               key={text}
               href={
@@ -48,7 +48,7 @@ export default function Navbar() {
                   ? "/#services"
                   : `/${text.toLowerCase()}`
               }
-              className="border-b-2 border-b-transparent hover:border-b-[#cd99cd] transition-colors duration-400"
+              className="border-b-2 border-b-transparent hover:border-b-[#cd99cd] hover:font-semibold  transition-all duration-400"
               onClick={() => setMenuOpen(false)}
             >
               {text}
@@ -91,7 +91,7 @@ export default function Navbar() {
           </button>
         </div>
         <nav className="flex flex-col space-y-4 p-4 text-[14px] sm:text-base md:text-lg lg:text-xl">
-          {["HOME", "ABOUT", "SERVICES", "CONTACT"].map((text) => (
+          {["HOME", "ABOUT", "SERVICES", "ADDRESS"].map((text) => (
             <Link
               key={text}
               href={

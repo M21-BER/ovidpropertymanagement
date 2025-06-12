@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function Error() {
+export default function NotFound() {
   const router = useRouter();
 
   return (
@@ -21,29 +21,20 @@ export default function Error() {
         </div>
       </Link>
 
-      <FaExclamation className="h-16 w-16 text-red-500 mb-4" />
-      <h1 className="text-2xl font-semibold text-gray-800 mb-2">
-        Oops! Something went wrong.
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">
+        404 - Page Not Found
       </h1>
-      <p className="text-gray-600 mb-6 max-w-md">
-        An unexpected error occurred. Please try again or go back to the
-        homepage.
+
+      <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-lg mx-auto mb-10 px-4">
+        Oops! The page you are looking for does not exist or has been moved.
       </p>
 
-      <div className="flex gap-4">
-        <button
-          onClick={() => reset()}
-          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-        >
-          Retry
-        </button>
-        <button
-          onClick={() => router.push("/")}
-          className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition"
-        >
-          Go Home
-        </button>
-      </div>
+      <button
+        onClick={() => router.push("/")}
+        className="bg-[#0F0F16] hover:opacity-80 text-white font-semibold px-8 py-3 rounded shadow transition focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50"
+      >
+        Go Back Home
+      </button>
     </div>
   );
 }

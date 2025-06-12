@@ -1,17 +1,17 @@
-import HeroSection from "../components/HeroSection";
-import CallToAction from "../components/CallToAction";
-import Quality from "../components/Quality";
-import ServicesSection from "../components/ServicesSection";
-import Showcase from "../components/Showcase";
+import HeroSection from "../components/home/HeroSection";
+import CallToAction from "../components/home/CallToAction";
+import Quality from "../components/home/Quality";
+import ServicesSection from "../components/home/ServicesSection";
+import Showcase from "../components/home/Showcase";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <HeroSection />
       <CallToAction />
       <Quality />
       <Showcase />
       <ServicesSection />
-    </main>
+    </>
   );
 }

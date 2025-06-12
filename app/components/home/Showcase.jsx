@@ -40,14 +40,29 @@ export default function Showcase() {
       {/* Text Section */}
       <div className="w-full md:w-2/5 bg-[#0F0F16] flex items-center justify-center py-10 px-6 md:px-8">
         <div className="text-[#fff] max-w-xl text-center md:text-left">
-          <h1 className="text-3xl  md:text-4xl font-bold mb-4 text-[#cd99cd]">
-            OVID GROUP
+          <h1 className="text-3xl  md:text-4xl font-bold mb-4 tg">
+            OVID HOLDING
           </h1>
           <p className="text-base md:text-lg text-black-300 mb-6">
             Innovating Excellence Across Diverse Industries.
           </p>
+
+          {/* <button
+            className="bgg text-[#fff] font-bold px-6 py-3 cursor-pointer rounded shadow-md  hover:opacity-70 transition-all duration-300 text-sm sm:text-base md:text-lg tracking-wide"
+            onClick={() => {
+              window.location.href = "https://ovid-group.com";
+            }}
+          >
+            Explore
+          </button> */}
+
           <button
-            className="bg-[#133289]  text-white px-6 py-3 rounded hover:opacity-70 transition"
+            className="bg-gradient-to-r from-[#cd99cd] via-[#9c6db0] to-[#6e49a3]
+    hover:from-[#6e49a3] hover:via-[#9c6db0] hover:to-[#cd99cd]
+    text-white text-[clamp(0.875rem,2.5vw,1rem)]
+    px-[clamp(1rem,4vw,2rem)] py-[clamp(0.5rem,1.5vw,1rem)]
+    rounded font-semibold opacity-100 hover:opacity-80
+    transition-all duration-300"
             onClick={() => {
               window.location.href = "https://ovid-group.com";
             }}

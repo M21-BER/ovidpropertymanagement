@@ -4,7 +4,7 @@ import RentalPropertyManagement from "../service-list/RentalPropertyManagement";
 import CommercialResponsibilities from "../service-list/CommercialResponsibilities";
 import SalesAndLeasing from "../service-list/SalesAndLeasing";
 import TitleDeedServices from "../service-list/TitleDeedServices";
-
+import img7 from "@/public/images/slider/slider7.jpg";
 async function ServiceDetail({ params }) {
   const { title } = await params;
   // const list = {
@@ -37,7 +37,7 @@ async function ServiceDetail({ params }) {
 
   return (
     <div>
-      <Header page="Our Services" />
+      <Header page="OUR SERVICES" img={img7} />
       {renderContent(title)}
     </div>
   );
